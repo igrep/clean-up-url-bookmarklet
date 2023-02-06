@@ -4,7 +4,7 @@
   "description": "Bookmarklet to clean up a URL for me.",
   "main": "dist/src/index.js",
   "scripts": {
-    "build": "tsc && bookmarkletify -i dist/index.js",
+    "build": "tsc && bookmarkletify -i dist/index.js | clip",
     "test": "vitest run"
   },
   "repository": {
