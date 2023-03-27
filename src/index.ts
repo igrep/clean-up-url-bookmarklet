@@ -6,13 +6,25 @@ const p = u.searchParams;
 for (const k of [...p.keys()]) {
   if (
     k.startsWith("utm_") ||
+    // manning.com
+    k.startsWith("trk_") ||
     [
       // readyfor
       "dmai",
       "argument",
       // www.hmv.co.jp
       "site",
-    ].includes(k)
+      // nikkei.com
+      "n_cid",
+      // asahi.com
+      "linkType",
+      "ref",
+    ].includes(k) ||
+    (
+      u.host === "www.asahi.com" &&
+      // Only asahi. But `id` is often used for essential parameters.
+      k === "id"
+    )
   ) {
     p.delete(k);
   }
