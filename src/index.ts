@@ -1,5 +1,6 @@
 const l = location;
 const u = new URL(l.href);
+u.hash = "";
 
 // processAny
 const p = u.searchParams;
@@ -9,6 +10,8 @@ for (const k of [...p.keys()]) {
     // manning.com
     k.startsWith("trk_") ||
     [
+      // store.line.me
+      "adId",
       // readyfor
       "dmai",
       "argument",
@@ -19,12 +22,16 @@ for (const k of [...p.keys()]) {
       // asahi.com
       "linkType",
       "ref",
+      // sdgs.yahoo.co.jp
+      "cpt_n",
+      "cpt_m",
+      "cpt_c",
+      "cpt_k",
+      "cpt_s",
     ].includes(k) ||
-    (
-      u.host === "www.asahi.com" &&
+    (u.host === "www.asahi.com" &&
       // Only asahi. But `id` is often used for essential parameters.
-      k === "id"
-    )
+      k === "id")
   ) {
     p.delete(k);
   }
