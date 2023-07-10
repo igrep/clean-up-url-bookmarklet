@@ -10,6 +10,7 @@ for (const k of [...p.keys()]) {
     // manning.com
     k.startsWith("trk_") ||
     [
+      "fbclid",
       // store.line.me
       "adId",
       // readyfor
