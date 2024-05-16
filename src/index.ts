@@ -29,6 +29,17 @@ for (const k of [...p.keys()]) {
       "cpt_c",
       "cpt_k",
       "cpt_s",
+      // natgeo.nikkeibp.co.jp
+      "xadid",
+      // Hatena Blog
+      "_gl",
+      "_gcl_au",
+      "_ga",
+      // note.com
+      "rt",
+      "sub_rt",
+      // economist.com
+      "etear",
     ].includes(k) ||
     (u.host === "www.asahi.com" &&
       // Only asahi. But `id` is often used for essential parameters.
