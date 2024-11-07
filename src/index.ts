@@ -43,7 +43,10 @@ for (const k of [...p.keys()]) {
     ].includes(k) ||
     (u.host === "www.asahi.com" &&
       // Only asahi. But `id` is often used for essential parameters.
-      k === "id")
+      k === "id") ||
+    (u.host === "x.com" &&
+      // Only Twitter. But `t` and `s` might be used in other websites.
+      ["t", "s"].includes(k))
   ) {
     p.delete(k);
   }
