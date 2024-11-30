@@ -11,6 +11,7 @@ for (const k of [...p.keys()]) {
     k.startsWith("trk_") ||
     [
       "fbclid",
+      "twclid",
       // store.line.me
       "adId",
       // readyfor
@@ -46,7 +47,8 @@ for (const k of [...p.keys()]) {
       k === "id") ||
     (u.host === "x.com" &&
       // Only Twitter. But `t` and `s` might be used in other websites.
-      ["t", "s"].includes(k))
+      ["t", "s"].includes(k)) ||
+    (u.host === "note.com" && k === "from")
   ) {
     p.delete(k);
   }
