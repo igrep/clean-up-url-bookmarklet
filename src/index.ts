@@ -14,6 +14,7 @@ for (const k of [...p.keys()]) {
       "twclid",
       "mc_cid",
       "mc_eid",
+      "ck_subscriber_id",
       // store.line.me
       "adId",
       // readyfor
